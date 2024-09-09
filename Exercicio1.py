@@ -28,22 +28,19 @@ def plotarGraficos():
     fig, axs = plt.subplots(3, 1, figsize=(10, 15))
 
     axs[0].plot(matriz)
-    axs[0].set_title('Dados Originais')
-    print("/n")
-
-    axs[1].plot(matrizCentrada)
-    axs[1].set_title('Mean Center')
-    print("/n")
+    axs[0].set_title('Dados Originais', pad=0)  
+    axs[1].set_title('Mean Center', pad=0)
 
     axs[2].plot(matrizEscalada)
-    axs[2].set_title('Auto Scale')
-    print("/n")
+    axs[2].set_title('Auto Scale', pad=0)
+
+    plt.subplots_adjust(hspace=0.5) 
 
     plt.tight_layout()
     plt.show()
 
 def mostrarMatriz(widget, matriz, titulo):
-    widget.delete(1.0, END)  # Limpar o conteúdo anterior
+    widget.delete(1.0, END)  
     widget.insert(END, f"{titulo}:\n")
     for linha in matriz:
         widget.insert(END, ' '.join(map(str, linha)) + "\n")
