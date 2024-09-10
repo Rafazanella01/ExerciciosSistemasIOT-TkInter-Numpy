@@ -27,7 +27,7 @@ entryData.pack(pady=10)
 botaoCalcular = tk.Button(janela, text="Calcular", font=("Arial", 14), command=calcularIdade)
 botaoCalcular.pack(pady=10)
 
-labelResultado = tk.Label(janela, text="", font=("Arial", 16), fg="yellow", bg="black")
+labelResultado = tk.Label(janela, text="", font=("Arial", 16), fg="black")
 labelResultado.pack(pady=20)
 
 janela.mainloop()

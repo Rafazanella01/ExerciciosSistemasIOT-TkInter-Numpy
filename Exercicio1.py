@@ -28,14 +28,15 @@ def plotarGraficos():
     fig, axs = plt.subplots(3, 1, figsize=(10, 15))
 
     axs[0].plot(matriz)
-    axs[0].set_title('Dados Originais', pad=0)  
-    axs[1].set_title('Mean Center', pad=0)
-
+    axs[0].set_title('Dados Originais', pad=10)  
+    
+    axs[1].plot(matrizCentrada)
+    axs[1].set_title('Mean Center', pad=10)
+    
     axs[2].plot(matrizEscalada)
-    axs[2].set_title('Auto Scale', pad=0)
-
+    axs[2].set_title('Auto Scale', pad=10)
+    
     plt.subplots_adjust(hspace=0.5) 
-
     plt.tight_layout()
     plt.show()
 
@@ -52,7 +53,7 @@ def selecionarArquivo():
     )
     
     if arquivo:
-        matriz = pd.read_csv(arquivo).values  # Lê o CSV em uma matriz numpy
+        matriz = pd.read_csv(arquivo).values 
         matrizCentrada = meancenter(matriz)
         matrizEscalada = autoscale(matriz)
         
